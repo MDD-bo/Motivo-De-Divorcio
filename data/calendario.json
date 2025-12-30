@@ -1,0 +1,70 @@
+[
+  {
+    "weekStart": "2025-11-24",
+    "weekEnd": "2025-11-30",
+    "titulo": "Semana: Documental A",
+    "slug": "documental-a"
+  },
+  {
+    "weekStart": "2025-12-01",
+    "weekEnd": "2025-12-07",
+    "titulo": "Semana: Comedia Z",
+    "slug": "comedia-z"
+  },
+  {
+    "weekStart": "2025-12-08",
+    "weekEnd": "2025-12-14",
+    "titulo": "Semana: Indie C",
+    "slug": "indie-c"
+  },
+  {
+    "weekStart": "2025-12-15",
+    "weekEnd": "2025-12-21",
+    "titulo": "Semana: Animada B",
+    "slug": "animada-b"
+  },
+  {
+    "weekStart": "2025-12-22",
+    "weekEnd": "2025-12-28",
+    "titulo": "Película de la semana: Película X",
+    "slug": "pelicula-x",
+    "enlace": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "weekStart": "2025-12-29",
+    "weekEnd": "2026-01-04",
+    "titulo": "Semana: Drama Y",
+    "slug": "drama-y"
+  },
+  {
+    "weekStart": "2026-01-05",
+    "weekEnd": "2026-01-11",
+    "titulo": "Semana: Película futura 1",
+    "slug": "futura-1"
+  },
+  {
+    "weekStart": "2026-01-12",
+    "weekEnd": "2026-01-18",
+    "titulo": "Semana: Película futura 2",
+    "slug": "futura-2"
+  }
+  ,
+  {
+    "weekStart": "2026-01-19",
+    "weekEnd": "2026-01-25",
+    "titulo": "Película de la semana: El Último Dragón",
+    "slug": "el-ultimo-dragon"
+  },
+  {
+    "weekStart": "2026-01-26",
+    "weekEnd": "2026-02-01",
+    "titulo": "Película de la semana: Viaje a la Luna",
+    "slug": "viaje-a-la-luna"
+  },
+  {
+    "weekStart": "2026-02-02",
+    "weekEnd": "2026-02-08",
+    "titulo": "Película de la semana: El Misterio del Faro",
+    "slug": "el-misterio-del-faro"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "svc-01",
+    "titulo": "Cuidado adultos mayores",
+    "precio_base": "$10/hora",
+    "descripcion": "Atención y compañía a domicilio para personas mayores."
+  },
+  {
+    "id": "svc-02",
+    "titulo": "Microtrabajos",
+    "precio_base": "$5/tarea",
+    "descripcion": "Tareas pequeñas: montajes, reparaciones sencillas."
+  },
+  {
+    "id": "svc-03",
+    "titulo": "Clases y tareas escolares",
+    "precio_base": "$8/hora",
+    "descripcion": "Apoyo académico y refuerzo escolar."
+  }
+  ,
+  {
+    "id":"svc-04",
+    "titulo":"Paseo y cuidado de mascotas",
+    "precio_base":"$8/paseo",
+    "descripcion":"Paseo diario y cuidado básico de tus mascotas. Nos aseguramos de que reciban el ejercicio y la atención que necesitan."
+  },
+  {
+    "id":"svc-05",
+    "titulo":"Soporte técnico a domicilio",
+    "precio_base":"$25/visita",
+    "descripcion":"Asistencia técnica para computadoras y dispositivos móviles en tu hogar u oficina. Solucionamos problemas de software y hardware."
+  }
+]

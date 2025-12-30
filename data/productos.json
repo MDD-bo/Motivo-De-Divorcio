@@ -1,0 +1,57 @@
+[
+  {
+    "id":"prod-001",
+    "slug":"camiseta-abc",
+    "nombre":"Camiseta ABC",
+    "precio":"$12.50",
+    "moneda":"USD",
+    "imagenes":["/img/prod-001-1.jpg"],
+    "stock":5,
+    "estado":"disponible",
+    "descripcion":"Camiseta 100% algodón, disponible en varias tallas y colores. Ideal para uso diario."
+  },
+  {
+    "id":"prod-002",
+    "slug":"taza-cafe-cool",
+    "nombre":"Taza de Café Cool",
+    "precio":"$8.00",
+    "moneda":"USD",
+    "imagenes":["/img/prod-002-1.jpg"],
+    "stock":10,
+    "estado":"disponible",
+    "descripcion":"Taza de cerámica con diseño exclusivo. Perfecta para tu bebida favorita."
+  },
+  {
+    "id":"prod-003",
+    "slug":"gorra-estilo-urbano",
+    "nombre":"Gorra Estilo Urbano",
+    "precio":"$15.00",
+    "moneda":"USD",
+    "imagenes":["/img/prod-003-1.jpg"],
+    "stock":3,
+    "estado":"agotado",
+    "descripcion":"Gorra moderna y cómoda, ideal para complementar tu look urbano. Edición limitada."
+  },
+  {
+    "id":"prod-004",
+    "slug":"cuaderno-ecologico",
+    "nombre":"Cuaderno Ecológico",
+    "precio":"$7.50",
+    "moneda":"USD",
+    "imagenes":["/img/prod-004-1.jpg"],
+    "stock":12,
+    "estado":"disponible",
+    "descripcion":"Cuaderno hecho con materiales reciclados, perfecto para tus notas y dibujos."
+  },
+  {
+    "id":"prod-005",
+    "slug":"bolso-tela-personalizado",
+    "nombre":"Bolso de Tela Personalizado",
+    "precio":"$20.00",
+    "moneda":"USD",
+    "imagenes":["/img/prod-005-1.jpg"],
+    "stock":7,
+    "estado":"disponible",
+    "descripcion":"Bolso de tela resistente, ideal para tus compras o para llevar tus objetos personales con estilo. ¡Personalízalo!"
+  }
+]
