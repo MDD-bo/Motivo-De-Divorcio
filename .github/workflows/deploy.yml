@@ -1,8 +1,10 @@
+
+name: MDD
 name: MDD
 
 on:
   push:
-  branches: [  master ]
+    branches: [ main, master ]
 
 permissions:
   contents: write
@@ -28,10 +30,13 @@ jobs:
         run: npm run validate:data
 
       - name: Build and export static site
-        run: npm run export
+        run: npm run build && npm run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
