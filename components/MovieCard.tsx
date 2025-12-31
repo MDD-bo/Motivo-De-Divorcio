@@ -16,4 +16,3 @@ export default function MovieCard({ movie }: { movie: Movie }) {
     </article>
   );
 }
-

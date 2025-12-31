@@ -15,4 +15,3 @@ export default function WhatsAppButton({ phone, message, label = 'Enviar por Wha
     </a>
   );
 }
-

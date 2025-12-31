@@ -1,20 +1,22 @@
 import React from 'react';
 import styles from './SocialMediaButtons.module.css';
 
-interface IconProps {
-  children: React.ReactNode;
+// --- 5. Dependency Inversion Principle (DIP) ---
+// Definimos interfaces para desacoplar los datos de la UI.
+interface ISocialLink {
+  id: string;
   href: string;
-  'aria-label': string;
+  label: string;
+  icon: React.ReactNode;
 }
 
-// A general-purpose icon component for SVG
-const Icon: React.FC<IconProps> = ({ children, href, 'aria-label': ariaLabel }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className={styles.socialIcon}>
-    {children}
-  </a>
-);
+interface ILocation {
+  id: string;
+  name: string;
+  mapUrl: string;
+}
 
-// Specific icons
+// --- Recursos (Iconos) ---
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 8.5v4.5a4 4 0 0 1-4 4H8.5" />
@@ -35,21 +37,87 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+const MapIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+    <line x1="8" y1="2" x2="8" y2="18" />
+    <line x1="16" y1="6" x2="16" y2="22" />
+  </svg>
+);
+
+// --- 1. Single Responsibility Principle (SRP) ---
+
+// Componente para botón de red social
+const SocialButton: React.FC<Omit<ISocialLink, 'id'>> = ({ href, label, icon }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles.socialIcon}>
+    {icon}
+  </a>
+);
+
+// Componente para tarjeta de ubicación (Croquis)
+// --- 4. Interface Segregation Principle (ISP) ---
+// Solo recibe lo necesario (name, mapUrl)
+const LocationCard: React.FC<Omit<ILocation, 'id'>> = ({ name, mapUrl }) => (
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', padding: '1rem', border: '1px solid #eee', borderRadius: '8px' }}>
+    <div style={{ width: '24px', height: '24px' }}>
+      <MapIcon />
+    </div>
+    <span style={{ fontWeight: 'bold' }}>{name}</span>
+    <a href={mapUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.8rem', textDecoration: 'underline' }}>
+      Ver Croquis
+    </a>
+  </div>
+);
+
+// --- 2. Open / Closed Principle (OCP) ---
+// Configuración de datos externa
+
+const socialLinks: ISocialLink[] = [
+  {
+    id: 'tiktok',
+    href: "https://www.tiktok.com/@motivo_de_divorcio?is_from_webapp=1&sender_device=pc",
+    label: "TikTok",
+    icon: <TikTokIcon />
+  },
+  {
+    id: 'facebook',
+    href: "https://www.facebook.com/people/Motivo-De-Divorcio-MDD/61585689839703/?sk=about",
+    label: "Facebook",
+    icon: <FacebookIcon />
+  },
+  {
+    id: 'whatsapp',
+    href: "https://wa.me/60963839",
+    label: "WhatsApp",
+    icon: <WhatsAppIcon />
+  }
+];
+
+const locationLinks: ILocation[] = [
+  { id: 'warnes', name: 'Warnes', mapUrl: 'https://goo.gl/maps/warnes' },
+  { id: 'mineros', name: 'Mineros', mapUrl: 'https://goo.gl/maps/mineros' },
+  { id: 'montero', name: 'Montero', mapUrl: 'https://goo.gl/maps/montero' },
+];
+
 const SocialMediaButtons = () => {
   return (
-    <div className={styles.socialContainer}>
-      <h3 className={styles.followUs}>Síguenos</h3>
-      <div className={styles.iconsWrapper}>
-        <Icon href="https://www.tiktok.com/@USUARIO_TIKTOK" aria-label="TikTok">
-          <TikTokIcon />
-        </Icon>
-        <Icon href="https://www.facebook.com/USUARIO_FACEBOOK" aria-label="Facebook">
-          <FacebookIcon />
-        </Icon>
-        {/* Replace with your actual number */}
-        <Icon href="https://wa.me/1234567890" aria-label="WhatsApp">
-          <WhatsAppIcon />
-        </Icon>
+    <div className={styles.socialContainer} style={{ flexDirection: 'column', gap: '2rem' }}>
+      <div>
+        <h3 className={styles.followUs}>Síguenos</h3>
+        <div className={styles.iconsWrapper}>
+          {socialLinks.map((link) => (
+            <SocialButton key={link.id} href={link.href} label={link.label} icon={link.icon} />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className={styles.followUs}>Nuestras Sucursales</h3>
+        <div className={styles.iconsWrapper}>
+          {locationLinks.map((loc) => (
+            <LocationCard key={loc.id} name={loc.name} mapUrl={loc.mapUrl} />
+          ))}
+        </div>
       </div>
     </div>
   );
