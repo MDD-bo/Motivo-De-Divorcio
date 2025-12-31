@@ -1,0 +1,45 @@
+.socialContainer {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.followUs {
+  color: var(--highlight-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.socialIcon {
+  display: inline-block;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.socialIcon:hover {
+  transform: scale(1.15);
+  color: var(--highlight-color);
+}
+
+/* Optional: Individual hover colors for brand recognition */
+.socialIcon[aria-label="TikTok"]:hover {
+  color: #00f2ea; /* TikTok's neon teal */
+}
+
+.socialIcon[aria-label="Facebook"]:hover {
+  color: #1877F2; /* Facebook Blue */
+}
+
+.socialIcon[aria-label="WhatsApp"]:hover {
+  color: #25D366; /* WhatsApp Green */
+}
