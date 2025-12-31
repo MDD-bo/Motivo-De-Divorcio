@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from './SocialMediaButtons.module.css';
 
+interface IconProps {
+  children: React.ReactNode;
+  href: string;
+  'aria-label': string;
+}
+
 // A general-purpose icon component for SVG
-const Icon = ({ children, href, 'aria-label': ariaLabel }) => (
+const Icon: React.FC<IconProps> = ({ children, href, 'aria-label': ariaLabel }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className={styles.socialIcon}>
     {children}
   </a>
