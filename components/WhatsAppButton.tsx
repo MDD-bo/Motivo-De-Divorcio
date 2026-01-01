@@ -1,17 +1,19 @@
+// components/WhatsAppButton.tsx
 import React from 'react';
 
-type Props = {
-  phone: string;
-  message: string;
-  label?: string;
+interface WhatsAppButtonProps {
+  phone: string;                      // número (abstracto)
+  messageBuilder: () => string;       // función que devuelve texto (abstracta)
+  children?: React.ReactNode;
   className?: string;
-};
+}
 
-export default function WhatsAppButton({ phone, message, label = 'Enviar por WhatsApp', className = '' }: Props) {
-  const href = `https://wa.me/${(phone || '').replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+export default function WhatsAppButton({ phone, messageBuilder, children = 'WhatsApp', className }: WhatsAppButtonProps) {
+  const message = encodeURIComponent(messageBuilder());
+  const href = `https://wa.me/${phone}?text=${message}`;
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {label}
+    <a href={href} target="_blank" rel="noreferrer" className={className}>
+      {children}
     </a>
   );
 }

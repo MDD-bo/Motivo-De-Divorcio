@@ -1,8 +1,11 @@
 import React from 'react';
 import services from '../../data/servicios.json';
 import WhatsAppButton from '../../components/WhatsAppButton';
-import { buildServiceMessage } from '../../lib/whatsapp';
+import { buildMovieMessage } from '../../lib/whatsapp';
 import { validateData, shouldValidateAtRuntime } from '../../lib/validate';
+
+
+
 
 if (shouldValidateAtRuntime()) validateData('servicios.json', services, { throwOnError: true });
 
@@ -17,7 +20,8 @@ export default function ServiciosPage() {
             <h3>{s.titulo}</h3>
             <p>{s.descripcion}</p>
             <p>{s.precio_base}</p>
-            <WhatsAppButton phone={PHONE_NUMBER} message={buildServiceMessage({id:s.id,titulo:s.titulo,precio_base:s.precio_base})} label="Solicitar por WhatsApp" />
+            <WhatsAppButton phone={PHONE} messageBuilder={() => buildMovieMessage(movie)} />
+
           </div>
         ))}
       </div>
